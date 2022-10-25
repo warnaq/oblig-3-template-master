@@ -46,6 +46,7 @@ public class SBinTre<T> {
         comp = c;
     }
 
+    //Oppgave 2, ferdig kodet:
     public boolean inneholder(T verdi) {
         if (verdi == null) return false;
 
@@ -61,6 +62,7 @@ public class SBinTre<T> {
         return false;
     }
 
+    //oppgave 2, som vi skal lage selv:
     public int antall() {
         return antall;
     }
@@ -84,6 +86,7 @@ public class SBinTre<T> {
     }
 
     //Kilde: programkode 5.2.3 a)
+    //Oppgave 1
     public boolean leggInn(T verdi) {
         Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
         Node<T> p = rot, q = null; // p starter i roten
@@ -102,7 +105,7 @@ public class SBinTre<T> {
         return true;
    }
 
-   //Programkode 5.2.8 c)
+   //Programkode 5.2.8 c) Oppgave 6:
     public boolean fjern(T verdi) {
         if (verdi == null) return false; // treet har ingen nullverdier
         Node<T> p = rot, q = null; // q skal være forelder til p
@@ -137,7 +140,7 @@ public class SBinTre<T> {
         antall--; // det er nå én node mindre i treet
         return true;
     }
-
+//Oppgave 6:
     public int fjernAlle(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -163,6 +166,7 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
+    //OPPGAVE 3:
     private static <T> Node<T> førstePostorden(Node<T> p) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -171,6 +175,7 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
+//oppgave 4
     public void postorden(Oppgave<? super T> oppgave) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -183,6 +188,7 @@ public class SBinTre<T> {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
+    //oppgave 5:
     public ArrayList<T> serialize() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
