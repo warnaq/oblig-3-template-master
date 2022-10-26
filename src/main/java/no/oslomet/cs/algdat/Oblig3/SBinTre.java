@@ -1,10 +1,7 @@
 package no.oslomet.cs.algdat.Oblig3;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class SBinTre<T> {
     private static final class Node<T>   // en indre nodeklasse
@@ -62,7 +59,7 @@ public class SBinTre<T> {
         return false;
     }
 
-    //oppgave 2, som vi skal lage selv:
+
     public int antall() {
         return antall;
     }
@@ -163,16 +160,54 @@ public class SBinTre<T> {
     }
 
     public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (antall == 0) {
+            return;
+        }
+        Node<T> p = rot; //initialiserer p som rot
+        int stopper = antall;
+        p = førstePostorden(p);
+        while (stopper != 0) {
+            if (p != null) {
+                fjern(p.verdi);
+
+                if (p != null) {
+                    p.verdi = null;
+                }
+                if (p != null) {
+                    p = nestePostorden(p);
+                }
+                stopper--;
+            }
+        }
     }
 
     //OPPGAVE 3:
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+            Objects.requireNonNull(p); //finner ut av om p er null
+
+        //kjører en while loop sjekker postorderen om p ikke er lik 0. Først sjekker den mot venstre, så mot høyre.
+            while (true) {
+                if (p.venstre != null) {
+                    p = p.venstre;
+                } else if (p.høyre != null) {
+                    p = p.høyre;
+                } else {
+                    return p;
+                }
+            }
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Node<T> f = p.forelder;
+        if (f == null) {
+            return null;
+        }
+        if (f.høyre == p || f.høyre == null) {
+            return f;
+        }
+        else {
+            return førstePostorden(f.høyre);
+        }
     }
 
 //oppgave 4
