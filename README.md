@@ -2,11 +2,11 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende student:
-* Navn Navnesen, S123456, s123456@oslomet.no
+Wardah Fatima Naqvi, S348559, s348559@oslomet.no
 
 
-# Oppgavebeskrivelse
+# Oppgavebeskrivelse 
 
-I oppgave 1 så gikk jeg frem ved å ...
+Oppgave 1 er inspirert fra programkoden 5.2.3 a. Jeg har innført noen endringer for å få koden til å passe bedre med oppgaven. Først utelukker vi at verdien ikke kan være null. etter det kjøres en while loop 
 
-I oppgave 2 så brukte jeg en ... til å ...
+Oppgave 2 var for dte meste ferdigkodt Lagde metoden public int antall (t-verdi) ved å 
