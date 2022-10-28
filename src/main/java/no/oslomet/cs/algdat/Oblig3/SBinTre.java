@@ -137,10 +137,13 @@ public class SBinTre<T> {
         antall--; // det er nå én node mindre i treet
         return true;
     }
+
 //Oppgave 6:
-    public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
+public int fjernAlle(T verdi) { //kilde: oppg 6 "løsningsforslag - oppgaver i avsnitt 5.2.8 - oppgave 3"
+    int verdiAntall = 0;
+    while (fjern(verdi)) verdiAntall++;
+    return verdiAntall;
+}
 
     public int antall(T verdi) {
             Node<T> p = rot;
