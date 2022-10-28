@@ -162,28 +162,27 @@ public int fjernAlle(T verdi) { //kilde: oppg 6 "løsningsforslag - oppgaver i a
             return antallVerdi;
     }
 
+    // oppgave 6:
     public void nullstill() {
-        if (antall == 0) {
+        if (antall == 0) { //Returnerer ingenting dersom antall er null
             return;
         }
-        Node<T> p = rot; //initialiserer p som rot
-        int stopper = antall;
-        p = førstePostorden(p);
-        while (stopper != 0) {
+        Node<T> p = rot; //Initialiserer p som rot.
+        int stopper = antall; //Hjelpevariabel som skal oppdatere antall.
+                p= førstePostorden(p); //Initialiserer den første verdien av p i
+        while (stopper != 0){
             if (p != null) {
-                fjern(p.verdi);
-
-                if (p != null) {
-                    p.verdi = null;
-                }
-                if (p != null) {
-                    p = nestePostorden(p);
-                }
-                stopper--;
+                fjern(p.verdi); //bruker fjern() metoden og nullstiller for
             }
+            if (p != null) {
+                p.verdi = null; //Oppdaterer p.verdi.
+            }
+            if (p != null) {
+                p = nestePostorden(p); //Bruker nestePostorden() for å gå
+            }
+            stopper--; //Antall verdier oppdateres.
         }
     }
-
     //OPPGAVE 3:
     private static <T> Node<T> førstePostorden(Node<T> p) {
             Objects.requireNonNull(p); //finner ut av om p er null
